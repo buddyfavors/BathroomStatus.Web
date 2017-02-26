@@ -15,7 +15,9 @@
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
-    "React.AspNet": "3.0.1"
+    "React.AspNet": "3.0.1",
+    "Microsoft.AspNetCore.Diagnostics": "1.1.0",
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.1.0"
   },
 
   "tools": {
