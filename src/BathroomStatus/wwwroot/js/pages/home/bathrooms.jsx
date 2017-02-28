@@ -4,7 +4,8 @@
     },
     fetchDataFromServer: function () {
         var xhr = new XMLHttpRequest();
-        xhr.open('get', this.props.url, true);
+        var url = window.location.href + this.props.url;
+        xhr.open('get', url, true);
         xhr.onload = function () {
             var data = JSON.parse(xhr.responseText);
             this.setState({ data: data });
@@ -32,6 +33,6 @@
 });
 
 ReactDOM.render(
-  <Bathrooms url="/BathroomStatus/api/bathrooms" pollInterval="2000" />,
+  <Bathrooms url="/api/bathrooms" pollInterval="2000" />,
   document.getElementById('content')
 );
