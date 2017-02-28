@@ -7,7 +7,7 @@ namespace BathroomStatus.Stores
     public interface IBathroomStore
     {
         IEnumerable<Bathroom> GetAll();
-        Bathroom GetById(Guid id);
+        Bathroom GetById(int id);
         void Update(Bathroom bathroom);
     }
 }

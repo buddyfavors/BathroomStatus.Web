@@ -4,7 +4,7 @@ namespace BathroomStatus.Models
 {
     public class Bathroom
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public int Id { get; set; }
         public string Name { get; set; }
         public bool IsOpened { get; set; }
     }

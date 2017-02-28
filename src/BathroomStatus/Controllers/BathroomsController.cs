@@ -24,7 +24,7 @@ namespace BathroomStatus.Controllers
         }
         
         [HttpPut("{id}")]
-        public void Put(Guid id, [FromBody]Bathroom updatedBathroom)
+        public void Put(int id, [FromBody]Bathroom updatedBathroom)
         {
             var bathroom = m_BathroomStore.GetById(id);
             bathroom.IsOpened = updatedBathroom.IsOpened;

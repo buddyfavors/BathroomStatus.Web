@@ -11,6 +11,7 @@ namespace BathroomStatus.Stores
         {
             new Bathroom
             {
+                Id = 1,
                 Name = "Back Office"
             }
         };
@@ -20,7 +21,7 @@ namespace BathroomStatus.Stores
             return m_DB;
         }
 
-        Bathroom IBathroomStore.GetById(Guid id)
+        Bathroom IBathroomStore.GetById(int id)
         {
             return m_DB.FirstOrDefault(x => x.Id == id);
         }
