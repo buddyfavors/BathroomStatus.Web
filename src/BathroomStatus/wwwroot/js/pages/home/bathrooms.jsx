@@ -32,6 +32,6 @@
 });
 
 ReactDOM.render(
-  <Bathrooms url="/api/bathrooms" pollInterval="2000" />,
+  <Bathrooms url="/BathroomStatus/api/bathrooms" pollInterval="2000" />,
   document.getElementById('content')
 );
