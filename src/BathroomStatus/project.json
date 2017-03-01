@@ -17,7 +17,8 @@
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "React.AspNet": "3.0.1",
     "Microsoft.AspNetCore.Diagnostics": "1.1.0",
-    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.1.0"
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.1.0",
+    "Gray.Microsoft.AspNetCore.SignalR.Server": "0.2.0-alpha1"
   },
 
   "tools": {
