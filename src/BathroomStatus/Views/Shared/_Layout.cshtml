@@ -3,16 +3,25 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,300,500&amp;subset=latin" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <link href="@Url.Content("~/css/main.css")" rel="stylesheet" />
 </head>
 <body>
-    @RenderBody()
-    <h1>Bathroom Status</h1>
-    <div id="content"></div>
+    <nav class="top-nav">
+        <div class="container">
+            <div class="nav-wrapper"><a class="page-title">Bathroom Status</a></div>
+        </div>
+    </nav>
+    <main id="content">
+        @RenderBody()
+    </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <script src="@Url.Content("~/signalr/hubs")"></script>
     <script src="@Url.Content("~/js/pages/home/bathrooms.jsx")"></script>
 </body>

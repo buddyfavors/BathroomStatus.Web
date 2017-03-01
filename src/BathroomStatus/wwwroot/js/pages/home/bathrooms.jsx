@@ -36,13 +36,18 @@
     render: function () {
         var bathrooms = this.state.data.map(function (bathroom) {
             return (
-            <div key={bathroom.Id} className="bathroom">
-                {bathroom.Name}: <span className={bathroom.IsOpened ? 'opened' : 'closed'}>{bathroom.IsOpened ? 'Opened' : 'Closed'}</span>
-            </div>
+                <div key={bathroom.Id} className="row">
+                    <div className="col s12 m9 l10">
+                        <div className="section bathroom">
+                            <h4>{bathroom.Name}</h4>
+                            <span className={`waves-effect waves-light btn ${bathroom.IsOpened ? 'green' : 'red'}`}>{bathroom.IsOpened ? 'Opened' : 'Closed'}</span>
+                        </div>
+                    </div>
+                </div>
           );
         });
         return (
-          <div>
+          <div className="container">
             {bathrooms}
           </div>
         );
