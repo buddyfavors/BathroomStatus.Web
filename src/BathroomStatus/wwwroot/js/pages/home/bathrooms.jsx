@@ -14,13 +14,30 @@
     },
     componentDidMount: function () {
         this.fetchDataFromServer();
-        window.setInterval(this.fetchDataFromServer, this.props.pollInterval);
+
+        var bathroomsHub = $.connection.bathroomsHub;
+
+        bathroomsHub.client.update = function (updatedBathroom) {
+            var bathrooms = this.state.data;
+            
+            bathrooms.forEach(function (bathroom) {
+                if (bathroom.Id !== updatedBathroom.Id) {
+                    return;
+                }
+
+                bathroom.IsOpened = updatedBathroom.IsOpened;
+            });
+
+            this.setState({ data: bathrooms });
+        }.bind(this);
+
+        $.connection.hub.start();
     },
     render: function () {
         var bathrooms = this.state.data.map(function (bathroom) {
             return (
-            <div key={bathroom.id} className="bathroom">
-                {bathroom.name}: <span className={bathroom.isOpened ? 'opened' : 'closed'}>{bathroom.isOpened ? 'Opened' : 'Closed'}</span>
+            <div key={bathroom.Id} className="bathroom">
+                {bathroom.Name}: <span className={bathroom.IsOpened ? 'opened' : 'closed'}>{bathroom.IsOpened ? 'Opened' : 'Closed'}</span>
             </div>
           );
         });
