@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using BathroomStatus.Stores;
 using Microsoft.AspNetCore.Http;
 using React.AspNet;
+using Newtonsoft.Json.Serialization;
 
 namespace BathroomStatus
 {
@@ -33,8 +30,13 @@ namespace BathroomStatus
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddReact();
 
-            // Add framework services.
-            services.AddMvc();
+            services.AddMvc()
+                .AddJsonOptions(options =>
+                {
+                    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                });
+
+            services.AddSignalR(options => options.Hubs.EnableDetailedErrors = true);
 
             services.AddSingleton<IBathroomStore, BathroomStore>();
         }
@@ -82,6 +84,8 @@ namespace BathroomStatus
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            app.UseSignalR();
         }
     }
 }
