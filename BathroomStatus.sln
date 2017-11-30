@@ -1,16 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C74133C2-2811-42B0-BCD8-2FF1CFE84CD8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EBFDFB51-2A57-47F9-B935-4C4244A549EE}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "BathroomStatus", "src\BathroomStatus\BathroomStatus.xproj", "{A12CCCBA-EFBF-49A7-9456-5D34B9C34077}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BathroomStatus", "src\BathroomStatus\BathroomStatus.csproj", "{A12CCCBA-EFBF-49A7-9456-5D34B9C34077}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
